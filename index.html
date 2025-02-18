@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biodata Saya - Website Kreatif</title>
+  <style>
+    /* Reset dan style dasar */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; }
+    
+    /* Header & Navigasi */
+    header {
+      background: linear-gradient(90deg, #ff416c, #ff4b2b);
+      color: #fff;
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+    header .logo h1 {
+      font-size: 1.8rem;
+    }
+    header ul {
+      list-style: none;
+      display: flex;
+    }
+    header ul li {
+      margin-left: 20px;
+    }
+    header ul li a {
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    header ul li a:hover {
+      color: #ffd700;
+    }
+    
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('https://source.unsplash.com/random/1600x900') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 1.5rem;
+    }
+    
+    /* Biodata Section */
+    section#biodata {
+      padding: 100px 20px 80px;
+      background: #fff;
+    }
+    .biodata-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .biodata-img {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+    .biodata-img img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ff4b2b;
+      animation: rotateImage 10s linear infinite;
+    }
+    .biodata-info {
+      flex: 2 1 400px;
+    }
+    .biodata-info h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: slideIn 1.5s ease-out;
+    }
+    .biodata-info p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+    
+    /* Berita Viral Section */
+    section#berita {
+      padding: 80px 20px;
+      background: #f9f9f9;
+    }
+    section#berita h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      animation: fadeIn 1.5s ease-in;
+    }
+    .news-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .news-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .news-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+    }
+    .news-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .news-card .news-content {
+      padding: 20px;
+    }
+    .news-card .news-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .news-card .news-content p {
+      font-size: 1rem;
+      color: #666;
+    }
+    
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    /* Animasi Keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes rotateImage {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.5rem; }
+      .hero-content p { font-size: 1.2rem; }
+      .biodata-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .biodata-info { margin-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header dengan Navigasi -->
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>My Creative Bio</h1>
+      </div>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#biodata">Biodata</a></li>
+        <li><a href="#berita">Berita Viral</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Selamat Datang di Website Saya</h1>
+      <p>Website kreatif dengan animasi dan UI/UX modern!</p>
+    </div>
+  </section>
+
+  <!-- Biodata Section -->
+  <section id="biodata">
+    <div class="biodata-container">
+      <div class="biodata-img">
+        <img src="https://source.unsplash.com/random/250x250?face" alt="Foto Saya">
+      </div>
+      <div class="biodata-info">
+        <h2>Nama Saya</h2>
+        <p>
+          Halo, saya [Nama Anda]. Saya seorang developer kreatif yang menyukai desain modern dan animasi dinamis. Saya memiliki passion dalam menciptakan website yang tidak hanya fungsional, tetapi juga memukau secara visual dan interaktif. Dengan pengalaman di bidang front-end development, saya selalu berusaha menggabungkan estetika dan teknologi dalam setiap proyek.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Berita Viral Section -->
+  <section id="berita">
+    <h2>Berita Viral</h2>
+    <div class="news-container">
+      <!-- News Card 1 -->
+      <div class="news-card">
+        <img src="https://source.unsplash.com/random/400x300?tech" alt="Berita TikTok">
+        <div class="news-content">
+          <h3>Viral di TikTok: Tren Terbaru</h3>
+          <p>Simak tren terbaru yang sedang viral di TikTok dan bagaimana pengaruhnya terhadap dunia digital.</p>
+        </div>
+      </div>
+      <!-- News Card 2 -->
+      <div class="news-card">
+        <img src="https://source.unsplash.com/random/400x300?fashion" alt="Berita Instagram">
+        <div class="news-content">
+          <h3>Instagram Update: Fitur Baru</h3>
+          <p>Instagram meluncurkan fitur baru yang membuat pengalaman berbagi foto semakin interaktif dan menyenangkan.</p>
+        </div>
+      </div>
+      <!-- News Card 3 -->
+      <div class="news-card">
+        <img src="https://source.unsplash.com/random/400x300?news" alt="Berita X">
+        <div class="news-content">
+          <h3>Update dari X: Perubahan Algoritma</h3>
+          <p>X (sebelumnya Twitter) mengubah algoritmanya yang berdampak pada cara pengguna mendapatkan informasi.</p>
+        </div>
+      </div>
+      <!-- Tambahkan kartu berita tambahan sesuai kebutuhan -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My Creative Bio. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript untuk interaksi -->
+  <script>
+    // Smooth scrolling untuk navigasi
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetElement = document.querySelector(this.getAttribute('href'));
+        if(targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Kamu bisa menambahkan interaksi atau animasi tambahan dengan JavaScript di sini.
+  </script>
+</body>
+</html>
